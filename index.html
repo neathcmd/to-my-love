@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Love Message</title>
+    <!-- Tailwind CSS -->
+    <link href="./output.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <style>
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    .animate-pulse-custom {
+      animation: pulse 1.5s infinite;
+    }
+    .floating-heart {
+      position: fixed;
+      pointer-events: none;
+      user-select: none;
+    }
+  </style>
+  <body
+    class="m-0 h-screen flex items-center justify-center bg-gradient-to-br from-pink-400 to-pink-600 font-sans text-white text-center overflow-hidden"
+  >
+    <div id="particles" class="fixed inset-0 pointer-events-none"></div>
+
+    <main class="relative z-10 w-full px-4">
+      <div
+        id="mainContainer"
+        class="opacity-0 transform translate-y-8 p-6 sm:p-8 bg-white/10 backdrop-blur-md rounded-2xl max-w-[600px] mx-auto transition-all duration-300 hover:bg-white/20"
+      >
+        <a
+          href="#"
+          id="mainHeart"
+          class="text-5xl sm:text-6xl cursor-pointer hover:scale-110 transition-transform"
+        >
+          ❤️
+        </a>
+
+        <h1
+          id="title"
+          class="text-3xl sm:text-4xl mb-4 sm:mb-6 opacity-0 transform translate-y-4"
+        >
+          To my girl, I just wanna you to know that....
+        </h1>
+
+        <div
+          id="message"
+          class="text-lg sm:text-xl leading-relaxed mb-6 sm:mb-8 opacity-0 text-start"
+        ></div>
+
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center mb-6 sm:mb-8"
+        >
+          <button
+            id="showLove"
+            class="bg-pink-500 hover:bg-pink-600 text-white px-6 py-2 rounded-lg transition-all hover:scale-105 active:scale-95"
+          >
+            Show Love ❤️
+          </button>
+          <button
+            id="revealMessage"
+            class="bg-purple-500 hover:bg-purple-600 text-white px-6 py-2 rounded-lg transition-all hover:scale-105 active:scale-95"
+          >
+            Secret Message 💌
+          </button>
+        </div>
+
+        <div id="bottomHeart" class="text-5xl sm:text-6xl animate-pulse-custom">
+          ❤️
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
